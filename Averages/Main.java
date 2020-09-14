@@ -117,9 +117,7 @@ public class Main {
         return nums;
     }
 
-    public Main(){
-        in = new Scanner(System.in); // initialise the scanner for data input
-
+    public void mainAverage(){
         System.out.println("Simply Enter Numbers After Each Prompt, And Enter The Letter 'c' To Calculate The Average");
 
         ArrayList<Double> nums = getNums(); // use the helper method to get the numbers into a nice ArrayList
@@ -142,9 +140,27 @@ public class Main {
             String fileName = in.nextLine();
 
             writeToFile(nums, fileName);
-
         }
-        // otherwise go restart the loop
+    }
+
+    public void mainRead(){
+        System.out.print("File Name => ");
+        String file = in.nextLine();
+        ArrayList<Double> nums = readFile(file);
+        System.out.println("Your Numbers Were: " + nums.toString());
+    }
+
+    public Main(){
+        in = new Scanner(System.in); // initialise the scanner for data input
+        System.out.print("Read A Result? [y/n] ");
+
+        String answer = in.nextLine(); // get the next line of input
+
+        if(answer.length() == 0 || Character.toLowerCase(answer.charAt(0)) == 'y'){ // if there is no input or the first char is 'n'
+            mainRead();
+        }else{
+            mainAverage();
+        }
     }
 
     public static void main(String[] args){
