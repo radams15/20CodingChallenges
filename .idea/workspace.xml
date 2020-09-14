@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d0897aae-68a0-4d8a-9f65-b8b1f28a516e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/20CodingChallenges.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Averages/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Basic Lists/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Challenges.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Change Return/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Count Vowels/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Count Words/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email Validator/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Letter List/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mastermind/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Max and Min List/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Palindrome/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Password Reset Program/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pig Latin/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Quiz Maker/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RPG Character Stat Creator/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit Converter/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1hP3lmNCRJt75oXiT72CWtG5yjA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="20CodingChallenges" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d0897aae-68a0-4d8a-9f65-b8b1f28a516e" name="Default Changelist" comment="" />
+      <created>1599899055204</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599899055204</updated>
+      <workItem from="1599899057633" duration="3697000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1878" height="272" key="GridCell.Tab.0.bottom" timestamp="1599904483338">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="272" key="GridCell.Tab.0.bottom/1600.0.1920.1080/0.26.1600.874@1600.0.1920.1080" timestamp="1599904483338" />
+    <state width="1878" height="272" key="GridCell.Tab.0.center" timestamp="1599904483337">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="272" key="GridCell.Tab.0.center/1600.0.1920.1080/0.26.1600.874@1600.0.1920.1080" timestamp="1599904483337" />
+    <state width="1878" height="272" key="GridCell.Tab.0.left" timestamp="1599904483337">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="272" key="GridCell.Tab.0.left/1600.0.1920.1080/0.26.1600.874@1600.0.1920.1080" timestamp="1599904483337" />
+    <state width="1878" height="272" key="GridCell.Tab.0.right" timestamp="1599904483337">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="272" key="GridCell.Tab.0.right/1600.0.1920.1080/0.26.1600.874@1600.0.1920.1080" timestamp="1599904483337" />
+  </component>
+</project>
