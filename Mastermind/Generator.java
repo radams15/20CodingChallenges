@@ -1,6 +1,8 @@
 class Generator{
     private Difficulty difficulty;
     
+    private int number;
+    
     private int getRandomNumber(int min, int max){
         return (int) (Math.random() * ((max - min) + 1)) + min;
     }
@@ -15,7 +17,16 @@ class Generator{
         this.difficulty = difficulty;
     }
     
+    public int genNumber(){
+        if(difficulty == Difficulty.HARD){
+            number = getRandomNumber(5);
+        }else{
+            number = getRandomNumber(4);
+        }
+        return number;
+    }
+    
     public int getNumber(){
-        return getRandomNumber(4);
+        return number;
     }
 }
