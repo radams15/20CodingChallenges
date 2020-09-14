@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 class Generator{
     private Difficulty difficulty;
     
@@ -24,6 +26,26 @@ class Generator{
             number = getRandomNumber(4);
         }
         return number;
+    }
+
+    public ArrayList<Integer> getLocations(int attempt){
+        ArrayList<Integer> out = new ArrayList<>();
+        String attemptStr = String.valueOf(attempt);
+        String numberStr = String.valueOf(number);
+
+        if(attemptStr.length() != numberStr.length()){
+            return out;
+        }
+
+        for(int i=0 ; i<attemptStr.length() ; i++){
+            char attemptChr = attemptStr.charAt(i);
+            char numberChr = numberStr.charAt(i);
+            if(attemptChr == numberChr){
+                out.add(i);
+            }
+        }
+
+        return out;
     }
     
     public int getNumber(){
