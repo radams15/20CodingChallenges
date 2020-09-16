@@ -33,10 +33,6 @@ class Generator{
         String attemptStr = String.valueOf(attempt);
         String numberStr = String.valueOf(number);
 
-        if(attemptStr.length() != numberStr.length()){
-            return out;
-        }
-
         for(int i=0 ; i<attemptStr.length() ; i++){
             char attemptChr = attemptStr.charAt(i);
             char numberChr = numberStr.charAt(i);
