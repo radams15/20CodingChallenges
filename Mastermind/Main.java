@@ -17,6 +17,10 @@ class Main{
         int numTries = 0;
         
         Scanner in = new Scanner(System.in);
+        
+        printScores();
+        
+        System.out.println("");
 
         System.out.print("Difficulty: [E/M/H]: ");
         String difStr = in.nextLine(); // get the  string for easy, medium or hard
@@ -74,6 +78,14 @@ class Main{
         }
     }
     
+    private void printScores(){
+        HashMap<String, Integer> scores = getScores();
+        System.out.println("Scores: ");
+        for(HashMap.Entry<String, Integer> part : scores.entrySet()){
+            System.out.printf("\t%s => %d%n", part.getKey(), part.getValue());
+        }
+    }
+    
     private HashMap<String, Integer> getScores(){
         HashMap<String, Integer> out = new HashMap<>();
 
@@ -95,14 +107,14 @@ class Main{
     }
 
     private void writeToFile(String name, int score){
+        HashMap<String, Integer> scores = getScores();
+        
         File file = new File(saveFile);
         
         try {
             FileWriter writer = new FileWriter(file);
 
             StringBuilder outBuilder = new StringBuilder();
-            
-            HashMap<String, Integer> scores = getScores();
             
             for(HashMap.Entry<String, Integer> part : scores.entrySet()){
                 outBuilder.append(part.getKey());
