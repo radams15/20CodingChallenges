@@ -18,7 +18,7 @@ class Main{
         
         Scanner in = new Scanner(System.in);
         
-        printScores();
+        printHighScore();
         
         System.out.println("");
 
@@ -46,7 +46,7 @@ class Main{
 
         generator.genNumber(); // get the generator to create a new random number
 
-        System.out.println(generator.getNumber());
+        //System.out.println(generator.getNumber());
         
         while(true){
             numTries++;
@@ -69,38 +69,49 @@ class Main{
         
         System.out.print("Save To File? [Y/N]: ");
         String input = in.nextLine();
+        
         if(input.length() != 0 && input.toLowerCase().charAt(0) == 'y'){
             System.out.print("Name: ");
-            String name = in.nextLine();
+            String name = in.nextLine(); // get their name
             if(name.length() != 0){
-                writeToFile(name, numTries);
+                writeToFile(name, numTries); // write the file if they input something
             }
         }
     }
     
-    private void printScores(){
+    private void printHighScore(){
         HashMap<String, Integer> scores = getScores();
-        System.out.println("Scores: ");
+        
+        int lowest = 9999; // nobody will take 9999 attempt to get a number, i hope...
+        String lowestName = null;
+        
         for(HashMap.Entry<String, Integer> part : scores.entrySet()){
-            System.out.printf("\t%s => %d%n", part.getKey(), part.getValue());
+            if(part.getValue() < lowest){ // find the lowest key in the hashmap
+                lowest = part.getValue();
+                lowestName = part.getKey();
+            }
+        }
+        
+        if(lowestName != null){ /// there is a value that has been selected
+            System.out.printf("High Score: %s with %d%n", lowestName, lowest);
         }
     }
     
     private HashMap<String, Integer> getScores(){
         HashMap<String, Integer> out = new HashMap<>();
 
-        File file = new File(saveFile);
+        File file = new File(saveFile); // open the file
 
         try {
             Scanner reader = new Scanner(file);
             while(reader.hasNextLine()){
-                String data = reader.nextLine();
-                String[] dataSplit = data.split(",");
-                out.put(dataSplit[0], Integer.parseInt(dataSplit[1]));
+                String data = reader.nextLine(); // read the line
+                String[] dataSplit = data.split(","); // split the line by the delimiter
+                out.put(dataSplit[0], Integer.parseInt(dataSplit[1])); // add to the hashmap
             }
 
-        }catch(IOException e){
-            e.printStackTrace();
+        }catch(IOException e){ // there was an error, e.g the file does not exist.
+            //e.printStackTrace();
         }
 
         return out;
@@ -116,22 +127,22 @@ class Main{
 
             StringBuilder outBuilder = new StringBuilder();
             
-            for(HashMap.Entry<String, Integer> part : scores.entrySet()){
+            for(HashMap.Entry<String, Integer> part : scores.entrySet()){ // add the existing scores in
                 outBuilder.append(part.getKey());
                 outBuilder.append(",");
                 outBuilder.append(part.getValue());
                 outBuilder.append("\n");
             }
             
-            outBuilder.append(name);
+            outBuilder.append(name); // add the new score in
             outBuilder.append(",");
             outBuilder.append(score);
             outBuilder.append("\n");
 
-            writer.write(outBuilder.toString());
+            writer.write(outBuilder.toString()); // write the data to the file
 
-            writer.close();
-        }catch(IOException e){
+            writer.close(); // close the file writer
+        }catch(IOException e){ // some sort of error with the file occured, e.g read only for some reason
             e.printStackTrace();
         }
     }
