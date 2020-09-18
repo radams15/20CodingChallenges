@@ -1,32 +1,43 @@
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.ArrayList;
 
 class Validator{
-    final Pattern emailPattern = Pattern.compile("(?<user>[\\S]+)?@(?<domain>[\\S]+)?\\.(?<extension>[\\S]+)?", Pattern.MULTILINE);
+
+    private final Pattern emailRegex = Pattern.compile("[\\S]+@[\\S]+\\.[\\S]+", Pattern.MULTILINE);
     
-    final String[] toCheck = {"user", "domain", "extension"};
-    
+   
     private String convertToHuman(String check){
         if(check.equals("user")){
-            return "No Account Before The '@'"
-        }else if(check.equals("domain"){
-            return ""
+            return "No Account Before The '@'";
+        }else if(check.equals("domain")){
+            return "No Domain Name Entered";
+        }else if(check.equals("extension")){
+            return "No Website Extension";
         }
+        return "Unspecified Error";
     }
     
     public ArrayList<String> getErrors(String email){
         ArrayList<String> out = new ArrayList<>();
         
-        Matcher matcher = emailPattern.matcher(email);
+        Matcher matcher = emailRegex.matcher(email);
         
-        matcher.matches();
-        
-        for(String check : toCheck){
-            if(matcher.group(check) == null){
-                out.add(check);
-            }
+        if(email.contains(" ")){
+            out.add("Spaces In Email!");
         }
+        
+        if(matcher.find()){
+            return out;
+        }else{
+            if(email.contains("@")){
+                out.add("No '@' In Email!");
+            }
+            
+            
+        }
+        
+        
         
         return out;        
     }
