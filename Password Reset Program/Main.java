@@ -1,19 +1,38 @@
 import java.util.Scanner;
 
 class Main{
+    final String saveFile = "out.txt";
 
     public Main(){
         Scanner in = new Scanner(System.in);
+        Storage storage = new Storage(saveFile);
         
         while(true){
+            System.out.print("Username => "); 
+            String username = in.nextLine();
+            
+            String existingPassword = storage.getPassword(username);
+            if(existingPassword != null){
+                System.out.print("Previous Password => "); 
+                String oldPassword = in.nextLine();
+                
+                if(!existingPassword.equals(oldPassword)){
+                    System.out.println("Old password does not match inputted password!");
+                    continue;
+                }
+            }
+            
             System.out.print("New Password => ");
             String attempt = in.nextLine();
+            System.out.print("Again => ");
+            String attempt1 = in.nextLine();
             
-            if(Validator.isValid(attempt)){
+            if(Validator.isValid(attempt, attempt1)){
+                storage.save(username, attempt);
                 break;
             }
             
-            for(String error : Validator.getErrors(attempt)){
+            for(String error : Validator.getErrors(attempt, attempt1)){
                 System.out.printf("\t%s%n", error);
             }
         }
