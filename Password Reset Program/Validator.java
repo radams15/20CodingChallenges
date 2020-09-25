@@ -37,6 +37,10 @@ class Validator{
         return out;
     }
     
+    public static Strength getStrength(String pass){
+		return Strength.MEDIUM;
+	}
+    
     public static boolean isValid(String pass, String pass1){
         if(getErrors(pass, pass1).size() == 0){
             return true;
