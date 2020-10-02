@@ -18,6 +18,16 @@ class Validator{
         
         return (caps == true) && (lowers == true);
     }
+    
+	private static boolean hasSpecialChars(String str){      
+        for(int i=0 ; i<str.length() ; i++){
+            if("!\"£$%^&*(){}[]`¬#/\\;:,.<>".contains(String.valueOf(str.charAt(i)))){
+                return true;
+            }
+        }
+        
+        return false;
+    }
 
     public static ArrayList<String> getErrors(String pass, String pass1){
         ArrayList<String> out = new ArrayList<>();
@@ -38,7 +48,40 @@ class Validator{
     }
     
     public static Strength getStrength(String pass){
-		return Strength.MEDIUM;
+		int rating = 0;
+		if(isValid(pass, pass)){
+			rating++;
+		}
+		
+		if(hasSpecialChars(pass)){
+			rating++;
+		}
+		
+		if(pass.length() > 10){
+			rating++;
+		}
+		
+		switch(rating){
+			case 2:
+				return Strength.MEDIUM;
+			case 3:
+				return Strength.HIGH;
+			default:
+				return Strength.LOW;
+		}
+	}
+	
+	public static String strengthToString(Strength strength){
+		switch(strength){
+			case LOW:
+				return "low";
+			case MEDIUM:
+				return "medium";
+			case HIGH:
+				return "high";
+			default:
+				return "none";
+		}
 	}
     
     public static boolean isValid(String pass, String pass1){

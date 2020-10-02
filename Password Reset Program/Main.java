@@ -27,6 +27,9 @@ class Main{
             System.out.print("Again => ");
             String attempt1 = in.nextLine();
             
+            Strength strength = Validator.getStrength(attempt);
+            System.out.printf("Your Password Is: %s%n", Validator.strengthToString(strength));
+            
             if(Validator.isValid(attempt, attempt1)){
                 storage.save(username, attempt);
                 break;
