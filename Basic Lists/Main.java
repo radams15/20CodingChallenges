@@ -124,12 +124,18 @@ class Main{
 		for(int i=0 ; i<dataList.size() ; i++){
 			dataList.set(i, dataList.get(i).toLowerCase());
 		}
+	}
+	
+	private void help(){
+		System.out.println("\tAdd: a\n\tPrint: p\n\tQuit:q\n\tSlice: s\n\tRemove: r\n\tSave to File: i\n\tOpen: o\n\tLowercase: l\n\tHelp: h");
 	}	
 	
 	
 	public Main(){
 		in = new Scanner(System.in);
 		dataList = new ArrayList<>();
+		
+		help();
 		
 		String line;
 		boolean running = true;
@@ -175,6 +181,11 @@ class Main{
 				case 'l': // lowercase
 					lower();
 					break;
+					
+				case 'h':
+					help();
+					break;
+				
 			}
 		}
 	}
