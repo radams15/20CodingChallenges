@@ -153,35 +153,35 @@ class Main{
 				case 'a': // add
 					add();
 					break;
-					
+				
 				case 'p': // print
 					print(dataList);
 					break;
-					
+				
 				case 'q': // quit
 					running = false;
 					break;
-					
+				
 				case 's': // slice
 					slice();
 					break;
-					
+				
 				case 'r': // remove
 					remove();
 					break;
-					
+				
 				case 'i': // insert to file
 					save();
 					break;
-					
+				
 				case 'o': // open
 					open();
 					break;
-					
+				
 				case 'l': // lowercase
 					lower();
 					break;
-					
+				
 				case 'h':
 					help();
 					break;
