@@ -1,14 +1,34 @@
+import java.util.Scanner;
+
 class Main{
 	
 	public Main(){
-		Orc player = new Orc("male");
+		Scanner in = new Scanner(System.in);
+
+		System.out.print("What Type Of Character? ");
+		String userInput = in.nextLine().toLowerCase();
+
+		System.out.print("Gender: ");
+		String gender = in.nextLine();
+
+		Character player;
+
+		if(userInput.equals("elf")){
+			player = new Elf(gender);
+		}else if(userInput.equals("orc")){
+			player = new Orc(gender);
+		}else{
+			player = new Human(gender);
+		}
 		
-		String serialised = player.serialise();
+		System.out.println(player.serialise());
 		
-		Character p1 = Character.load(serialised);
+		System.out.print("File to write to: ");
+		String file = in.nextLine();
 		
-		System.out.println(serialised+"\n");
-		System.out.println(p1.serialise());
+		player.writeToFile(file);
+		
+		System.out.printf("Written data to %s!%n", file);
 	}
 	
 	public static void main(String[] args){

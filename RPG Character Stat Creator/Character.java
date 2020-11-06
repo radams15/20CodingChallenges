@@ -1,5 +1,7 @@
 import java.util.ArrayList;
-import java.util.Arrays;
+
+import java.io.FileWriter;
+import java.io.File;
 
 class Character{
 	String characterClass;
@@ -17,21 +19,19 @@ class Character{
 	}
 	
 	public String serialise(){
-		return characterClass + "\n" + gender + "\n" + name + "\n" + strength + "\n" + dexterity + "\n" + intelligence + "\n" + String.join(";", abilities);
+		return "Class: " + characterClass + "\nGender: " + gender + "\nName: " + name + "\nStrength: " + strength + "\nDexterity: " + dexterity + "\nIntelligence: " + intelligence + "\nAbilities: " + String.join(";", abilities);
 	}
 	
-	public static Character load(String data){
-		String[] split = data.split("\n");
-		
-		Character out = new Character(split[2], split[1]);
-		out.characterClass = split[0];
-		out.strength = Integer.parseInt(split[3]);
-		out.dexterity = Integer.parseInt(split[4]);
-		out.intelligence = Integer.parseInt(split[5]);
-		
-		out.abilities = new ArrayList<>(Arrays.asList(split[6].split(";")));
-		
-		return out;
+	public void writeToFile(String fileName){
+	   File file = new File(fileName);
+        try {
+            FileWriter writer = new FileWriter(file);
+            writer.write(serialise());
+
+            writer.close();
+        }catch(Exception e){
+            System.out.println("File Error!");
+        }
 	}
 	
 	public Character(String name, String gender){
