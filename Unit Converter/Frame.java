@@ -4,32 +4,33 @@ import java.util.ArrayList;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.DecimalFormat;
 
 class Frame extends JFrame{
 	
-	private ArrayList<JFormattedTextField> fields = new ArrayList<>();
+	private ArrayList<UnitBox> fields = new ArrayList<>();
 	
-	private JFormattedTextField makeNumberInput(NumberCallback c, String returnData){
-		JFormattedTextField field = new JFormattedTextField(new DecimalFormat("#.0"));
-		ActionListener actionListener = new ActionListener() {
-		  public void actionPerformed(ActionEvent actionEvent) {
-			JFormattedTextField source = (JFormattedTextField) actionEvent.getSource();
-			double value = Double.parseDouble(source.getValue().toString());
-			
-			c.callback(value, returnData);
-			
-		  }
-		};
+	private void makeNumberInput(String unit, double multiplier){
+		UnitBox field = new UnitBox(unit, multiplier);
 		
-		field.addActionListener(actionListener); 
-		
-		return field;
+		field.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent actionEvent) {
+				UnitBox source = (UnitBox) actionEvent.getSource();
+				double value = Double.parseDouble(source.getValue().toString());
+
+				applyConversion(value, source);
+			}
+		});
+
+		fields.add(field);
 	}
 	
-	private void applyConversion(double in, String inUnit){
-		for(JFormattedTextField field : fields){
-			field.setValue(in);
+	private void applyConversion(double in, UnitBox source){
+		double newMetres = source.getMetres();
+
+		for(UnitBox box : fields){
+			if(! box.unit.equals(source.unit)){
+				box.setMetres(newMetres);
+			}
 		}
 	}
 	
@@ -40,26 +41,18 @@ class Frame extends JFrame{
 		
 		listPane.setLayout(layout);
 		
+		makeNumberInput("m", 1);
 		
-		JFormattedTextField metres = makeNumberInput(
-		(double d, String unit) -> {
-				applyConversion(d, unit);
-		}, "m");
-		
-		fields.add(metres);
-		
-		JFormattedTextField feet = makeNumberInput(
-		(double d, String unit) -> {
-				applyConversion(d, unit);
-		}, "ft");
-		fields.add(feet);
+		makeNumberInput("ft", 3.28084);
 		
 		
-		for(JFormattedTextField field : fields){
+		for(UnitBox field : fields){
 			listPane.add(field);
 		}
 		
 		
 		add(listPane);
+
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 }
