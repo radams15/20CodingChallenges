@@ -44,6 +44,7 @@ class Frame extends JFrame{
 		makeNumberInput("m", 1);
 		
 		makeNumberInput("ft", 3.28084);
+		makeNumberInput("mi", 0.0009999975145);
 		
 		
 		for(UnitBox field : fields){
