@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.*;
+
 
 import java.util.ArrayList;
 
@@ -7,10 +9,11 @@ import java.awt.event.ActionListener;
 
 class Frame extends JFrame{
 	
-	private ArrayList<UnitBox> fields = new ArrayList<>();
+	private ArrayList<UnitBox> distanceFields = new ArrayList<>();
+	private ArrayList<UnitBox> volumeFields = new ArrayList<>();
 	
-	private void makeNumberInput(String unit, double multiplier){
-		UnitBox field = new UnitBox(unit, multiplier);
+	private UnitBox makeNumberInput(String type, String unit, double multiplier){
+		UnitBox field = new UnitBox(type, unit, multiplier);
 		
 		field.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent actionEvent) {
@@ -21,15 +24,24 @@ class Frame extends JFrame{
 			}
 		});
 
-		fields.add(field);
+		return field;
 	}
 	
 	private void applyConversion(double in, UnitBox source){
-		double newMetres = source.getMetres();
 
-		for(UnitBox box : fields){
-			if(! box.unit.equals(source.unit)){
-				box.setMetres(newMetres);
+		if(source.type.equals("d")){
+			double newMetres = source.getBase();
+			for(UnitBox box : distanceFields){
+				if(! box.unit.equals(source.unit)){
+					box.setBase(newMetres);
+				}
+			}
+		}else if(source.type.equals("v")){
+			double newLitres = source.getBase();
+			for(UnitBox box : volumeFields){
+				if(! box.unit.equals(source.unit)){
+					box.setBase(newLitres);
+				}
 			}
 		}
 	}
@@ -37,20 +49,39 @@ class Frame extends JFrame{
 	public Frame(){
 		JPanel listPane = new JPanel();
 		
-		BoxLayout layout = new BoxLayout(listPane, BoxLayout.PAGE_AXIS);
+		GridLayout layout = new GridLayout(0, 2);
 		
 		listPane.setLayout(layout);
 		
-		makeNumberInput("m", 1);
+		UnitBox m = makeNumberInput("d", "m", 1);
+		JLabel lm = new JLabel("Metres");
+		listPane.add(lm);
+		listPane.add(m);
+		distanceFields.add(m);
 		
-		makeNumberInput("ft", 3.28084);
-		makeNumberInput("mi", 0.0009999975145);
-		
-		
-		for(UnitBox field : fields){
-			listPane.add(field);
-		}
-		
+		UnitBox ft = makeNumberInput("d", "ft", 3.28084);
+		JLabel lft = new JLabel("Feet");
+		listPane.add(lft);
+		listPane.add(ft);
+		distanceFields.add(ft);
+
+		UnitBox mi = makeNumberInput("d", "mi", 0.0009999975145);
+		JLabel lmi = new JLabel("Miles");
+		listPane.add(lmi);
+		listPane.add(mi);
+		distanceFields.add(mi);
+
+		UnitBox lt = makeNumberInput("v", "lt", 1);
+		JLabel llt = new JLabel("Litres");
+		listPane.add(llt);
+		listPane.add(lt);
+		volumeFields.add(lt);
+
+		UnitBox pt = makeNumberInput("v", "pt", 0.568261);
+		JLabel lpt = new JLabel("Pints");
+		listPane.add(lpt);
+		listPane.add(pt);
+		volumeFields.add(pt);
 		
 		add(listPane);
 

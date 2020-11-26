@@ -3,10 +3,10 @@ import java.util.Scanner;
 class Main{
 	public Main(){
 		Frame frame = new Frame();
+
+		frame.setSize(400, 500);
 		
 		frame.setVisible(true);
-		
-		frame.setSize(400, 500);
 	}
 	
 	public static void main(String[] args){
