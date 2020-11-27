@@ -11,6 +11,7 @@ class Frame extends JFrame{
 	
 	private ArrayList<UnitBox> distanceFields = new ArrayList<>();
 	private ArrayList<UnitBox> volumeFields = new ArrayList<>();
+	private ArrayList<UnitBox> areaFields = new ArrayList<>();
 	
 	private UnitBox makeNumberInput(String type, String unit, double multiplier){
 		UnitBox field = new UnitBox(type, unit, multiplier);
@@ -41,6 +42,13 @@ class Frame extends JFrame{
 			for(UnitBox box : volumeFields){
 				if(! box.unit.equals(source.unit)){
 					box.setBase(newLitres);
+				}
+			}
+		}else if(source.type.equals("a")){
+			double newHectares = source.getBase();
+			for(UnitBox box : areaFields){
+				if(! box.unit.equals(source.unit)){
+					box.setBase(newHectares);
 				}
 			}
 		}
@@ -77,11 +85,29 @@ class Frame extends JFrame{
 		listPane.add(lt);
 		volumeFields.add(lt);
 
-		UnitBox pt = makeNumberInput("v", "pt", 0.568261);
+		UnitBox pt = makeNumberInput("v", "pt", 1.75975);
 		JLabel lpt = new JLabel("Pints");
 		listPane.add(lpt);
 		listPane.add(pt);
 		volumeFields.add(pt);
+
+		UnitBox qt = makeNumberInput("v", "qt", 0.879877);
+		JLabel lqt = new JLabel("Quarts");
+		listPane.add(lqt);
+		listPane.add(qt);
+		volumeFields.add(qt);
+
+		UnitBox hc = makeNumberInput("a", "hc", 1);
+		JLabel lhc = new JLabel("Hectares");
+		listPane.add(lhc);
+		listPane.add(hc);
+		areaFields.add(hc);
+
+		UnitBox ac = makeNumberInput("a", "ac", 2.47105);
+		JLabel lac = new JLabel("Acres");
+		listPane.add(lac);
+		listPane.add(ac);
+		areaFields.add(ac);
 		
 		add(listPane);
 
