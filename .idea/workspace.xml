@@ -19,8 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bc7daeb-1869-4e12-b197-32d1af161f79" name="Default Changelist" comment="Finished Squares and Times Tables.">
-      <change afterPath="$PROJECT_DIR$/BinHexDec/Main.java" afterDir="false" />
+    <list default="true" id="1bc7daeb-1869-4e12-b197-32d1af161f79" name="Default Changelist" comment="Finished Binary/Hexadecimal/Binary converter">
+      <change afterPath="$PROJECT_DIR$/Shopping List/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shopping List/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shopping List/ShoppingList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/20CodingChallenges.iml" beforeDir="false" afterPath="$PROJECT_DIR$/20CodingChallenges.iml" afterDir="false" />
     </list>
@@ -78,15 +80,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -106,7 +106,8 @@
       <option name="presentableId" value="Default" />
       <updated>1600102132144</updated>
       <workItem from="1600102133467" duration="1359000" />
-      <workItem from="1609678598600" duration="3072000" />
+      <workItem from="1609678598600" duration="3440000" />
+      <workItem from="1610109115685" duration="1800000" />
     </task>
     <task id="LOCAL-00001" summary="Updated editor, completed Averages">
       <created>1600102548651</created>
@@ -136,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609681509882</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Finished Binary/Hexadecimal/Binary converter">
+      <created>1609681728381</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1609681728381</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +166,7 @@
     <MESSAGE value="Updated editor, completed Averages" />
     <MESSAGE value="Finished Hangman" />
     <MESSAGE value="Finished Squares and Times Tables." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished Squares and Times Tables." />
+    <MESSAGE value="Finished Binary/Hexadecimal/Binary converter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Binary/Hexadecimal/Binary converter" />
   </component>
 </project>
